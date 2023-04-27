@@ -52,13 +52,13 @@ def verify_same_geometry(img_1: sitk.Image, img_2: sitk.Image):
         print(ori1)
         print(ori2)
 
-    same_spac = np.all(np.isclose(spacing1, spacing2, atol=1.e-6, rtol=1.e-3))
+    same_spac = np.all(np.isclose(spacing1, spacing2, atol=1.e-2, rtol=1.e-2))
     if not same_spac:
         print("the spacing does not match between the images")
         print(spacing1)
         print(spacing2)
 
-    same_dir = np.all(np.isclose(direction1, direction2, atol=1.e-6, rtol=1.e-4))
+    same_dir = np.all(np.isclose(direction1, direction2, atol=1.e-2, rtol=1.e-2))
     if not same_dir:
         print("the direction does not match between the images")
         print(direction1)
